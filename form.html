@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<script language="JavaScript">
+function myFunction() {
+    location.reload();
+}
+    
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+var y = document.forms["myForm"]["fname"].value;
+    if (x == "admin" || y == "admin") {
+document.getElementById("w1").innerHTML = "WELCOME";
+        
+        return false;
+    }
+ else  {
+document.getElementById("w1").innerHTML = "User Name is incorrect";
+        
+        return false;
+    }
+}
+function setDisplay(id,attribute){
+        document.getElementById(id).style.display = attribute;
+    }
+</script>
+<p id=i> <center><h1>My SelfieTech</h1></p>
+
+<div id="page1" style="display: block;">
+<input onclick="setDisplay('a1', 'block');setDisplay('page1', 'none');" type="button" value="Log in" />
+<input onclick="setDisplay('myform1', 'block');setDisplay('page1', 'none');" type="button" value="Sign up" />
+</div>
+
+
+<div id="a1"  style="display: none;">
+<form name="myForm" action="demo_form.asp"
+onsubmit="return validateForm()" method="post" target="_blank" id="w1">
+User id: <input type="text" name="fname"> <br>
+<br>
+Password: <input type="password" name="fname1"><br><br>
+<input type="submit" value="Submit" onclick="setDisplay('a1', 'block');setDisplay('logout', 'block');">
+<input onclick="setDisplay('a1', 'none');setDisplay('page1', 'block');" type="button" value="Back" />
+</form>
+</div>
+
+
+
+<div id="myform1"  style="display: none;">
+<table>
+<tr>
+&nbsp;&nbsp;&nbsp;&nbsp; Name:
+     <input name="Name" TYPE="text" SIZE="20" MAXLENGTH="20">
+</tr>
+<br>
+<br>
+<tr>
+    &nbsp;&nbsp;&nbsp;&nbsp; Userid:
+     <input name="userid" TYPE="email" SIZE="20" MAXLENGTH="20">
+</tr>
+<br>
+<br>
+<tr>
+    Password:
+    <input name="password" TYPE="password" SIZE="20" MAXLENGTH="20">
+
+</tr><tr>
+<th>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" value="submit">
+<input onclick="setDisplay('myform1', 'none');setDisplay('page1', 'block');" type="button" value="Back" />
+</th>
+</tr>
+
+</table>
+
+
+</div>
+<div id="logout" style="display:none;">
+<input onclick="setDisplay('page1', 'block');setDisplay('a1', 'none');setDisplay('logout', 'none');window.location.reload();" type="button" value="Log out">
+</div>
+</html>
